@@ -103,6 +103,11 @@ client.on("message", async message => {
           return message.channel.send('This username has already requested to get verified');
         }
       }
+      for(var i = 0; i < pendingRequests.length; i++) {
+        if(pendingRequests[i]._discordID === message.author.id) {
+          return message.channel.send('You already sent a request to get verified');
+        }
+      }
       let key = "";
       for(var i = 0; i < 25; i++) {
         let char = keyChars[Math.round(Math.random() * keyChars.length)];
