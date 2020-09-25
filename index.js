@@ -1,4 +1,5 @@
 const express = require('express');
+const got = require("got");
 const Discord = require('discord.js');
 const roblox = require('noblox.js');
 const db = require('./db.js');
@@ -14,6 +15,10 @@ class Request {
     this._msgChannel = msgChannel;
   }
 }
+
+setInterval(function() {
+  got("DIRECT GLITCH URL");
+}, 240000);
 
 app.get(`/get-requests`, async (request, response) => {
      let name = request.query.username;
